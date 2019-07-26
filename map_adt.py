@@ -9,8 +9,14 @@ class ChainMap:
     def create(self,*dict):
         """create a single dictionary from two dictionaries.
         
+        Args:
+            dict: one or two dictionaries to add to a chain map.
+
         Returns:
-            dict: the created map
+            dict: the created map.
+
+        Run Time:
+            linear time : o(n).    
         """
         
         dicts = zip(*dict)
@@ -24,12 +30,18 @@ class ChainMap:
         Args:
             key (int or str): new key or the old key for the corresponding value.
             value (int or str): new value corresponding to the given key.
+        
+        Run Time:
+            constant time : o(1)
         """
 
         self.dict[key] = value
     
     def get_all_elements(self):
         """print all the key value of the map.
+        
+        Run Time:
+            linear time : o(n)
         """
         d = self.dict
         for key,value in d.items():
@@ -43,12 +55,18 @@ class ChainMap:
         
         Returns:
             int or str: a value of the corresponding key.
+
+        Run Time:
+            constant time : o(1)    
         """
         d = self.dict
         return d[key_]
 
     def get_len(self):
         """Return the length of the map.
+
+        Run Time:
+            linear time : o(1n)
         """
         return len(self.dict)
 
@@ -57,10 +75,13 @@ class ChainMap:
         """perfome membership test on keys.
         
         Args:
-            key: key value to test
+            key: key value to test.
         
         Returns:
-            bool: if key is present it returns True else False
+            bool: if key is present it returns True else False.
+
+        Run Time:
+            linear time : o(n)    
         """
 
         return key in self.dict        
